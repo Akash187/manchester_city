@@ -9,8 +9,8 @@ const Jumbotron = () => {
         <div/>
         <div/>
       </div>
-      <div className="jumbotron_image">
-        <img src={featured_player} alt="Featured Player"/>
+      <div>
+        <img src={featured_player} alt="Featured Player" className="jumbotron_image"/>
       </div>
       <div className="jumbotron_text">
         <div>3</div>
