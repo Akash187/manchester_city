@@ -1,25 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
-import Navbar from './component/navbar/Navbar';
-import Jumbotron from "./component/navbar/Jumbotron";
-import Matches from "./component/matches/Matches";
-import Team from "./component/team/Team";
-import Extra from "./component/extra/Extra";
-import Footer from "./component/footer/Footer";
+import Routes from "./component/routes/Routes";
 
-class App extends Component {
-  render() {
+const App = () =>{
     return (
       <div className="App">
-        <Navbar/>
-        <Jumbotron/>
-        <Matches/>
-        <Team/>
-        <Extra/>
-        <Footer/>
+        <Routes/>
       </div>
     );
-  }
-}
+};
 
 export default App;

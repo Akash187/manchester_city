@@ -1,6 +1,7 @@
 import React from 'react';
 import Otamendi from '../../images/players/Otamendi.png';
 import Roll from 'react-reveal/Roll';
+
 const Team = () => {
   return (
     <div className="team">

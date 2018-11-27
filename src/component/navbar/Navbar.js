@@ -1,5 +1,6 @@
 import React from 'react';
 import mc_logo from '../../images/logos/manchester_city_logo.png';
+import {NavLink} from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -8,7 +9,7 @@ const Navbar = () => {
         <img src={mc_logo} alt="Manchester City Logo" className="logo"/>
       </div>
       <div className="nav_link">
-        <div className="link">The Team</div>
+        <NavLink to="/the_team" className={'link'}>The Team</NavLink>
         <div className="link">Matches</div>
         <div className="link">Admin</div>
       </div>
