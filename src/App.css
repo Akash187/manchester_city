@@ -219,7 +219,7 @@
     justify-content: center;
 }
 
-.matches_container{
+.container{
     width: 72%;
 }
 
@@ -257,14 +257,20 @@
 .match_team div{
     display: flex;
     align-items: center;
-    font-size: 1rem;
+    font-size: 1.5rem;
     width: 15rem;
     background-color: white;
     margin: 0.1rem;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.match_team div div{
+    box-shadow: 0 0 0 0;
 }
 
 .match_team span{
     display: flex;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
     align-items: center;
     justify-content: center;
     font-size: 2rem;
@@ -282,6 +288,7 @@
 .matches_btn{
     margin-bottom: 3rem;
     padding: 0.5rem;
+    font-family:'Righteous', cursive;
     background-color: white;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
     outline: none;
@@ -295,14 +302,151 @@ button:active {
     box-shadow: 0 2px #666;
 }
 
+@media only screen and (max-width: 900px){
+    .container{
+        width: 95%;
+    }
+}
+
 @media only screen and (max-width: 560px){
-    .matches_container{
+    .container{
         width: 90%;
     }
 }
 
 
+/*Team Style*/
+.team{
+    background-image: url("./images/stripes.png");
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
+.team_container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+}
+
+.players{
+    display: flex;
+}
+
+.player{
+    width: 15rem;
+    height: 21.75rem;
+    background: white;
+    border: 0.5rem solid white;
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.24), 0 10px 30px 0 rgba(0, 0, 0, 0.19);
+}
+
+.player img{
+    background: rgba(144, 202, 217,0.2);
+    width: 15rem;
+}
+
+.player:nth-child(1){
+    top: 4.5rem;
+    z-index: 4;
+    position: relative;
+    left: 12rem;
+    margin-left: -12rem;
+    margin-bottom: 10rem;
+}
+
+.player:nth-child(2){
+    top: 3rem;
+    z-index: 3;
+    position: relative;
+    left: 12rem;
+    margin-left: -12rem;
+}
+
+.player:nth-child(3){
+    top: 1.5rem;
+    z-index: 2;
+    position: relative;
+    left: 12rem;
+    margin-left: -12rem;
+}
+
+.player_info{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 6rem;
+}
+
+.player_name{
+    width: 5rem;
+    font-size: 1.75rem;
+    font-weight: 700;
+    z-index: 2;
+}
+
+.player_jersey_no{
+    font-size: 7rem;
+    line-height: 1.0;
+    color: rgba(144, 202, 217,0.4);
+    margin-top: 0.5rem;
+}
+
+.players_header{
+    font-size: 5.5rem;
+    font-weight: 500;
+    color: white;
+}
+
+.players_header div span{
+    background: var(--background-color-two);
+    padding: 0 0.5rem;
+}
+
+.players_header div:nth-child(2){
+    margin: 1.1rem 0;
+}
+
+.players_btn{
+    margin: 1rem 0 3rem 0;
+    padding: 0.25rem;
+    background-color: white;
+    font-family:'Righteous', cursive;
+    border: 2px solid var(--background-color-two);
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    outline: none;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+@media only screen and (max-width: 480px){
+    .player:nth-child(2){
+        display: none;
+    }
+
+    .player:nth-child(1){
+        display: none;
+    }
+
+    .players_header{
+        margin-top: 3rem;
+        font-size: 3.5rem;
+    }
+}
+
+@media only screen and (max-width: 360px){
+    .player:nth-child(3){
+        display: none;
+    }
+}
+
+
+/*Extra Style*/
+.extra{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
 
 .extra:first-child{
