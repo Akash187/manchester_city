@@ -8,7 +8,7 @@ class LeagueTable extends Component{
   };
 
   componentDidMount(){
-    scrapeIt("https://www.mancity.com/league-table/first-team", {
+    scrapeIt("https://cors-anywhere.herokuapp.com/https://www.mancity.com/league-table/first-team", {
       tableBody: {
         listItem: ".table--body .table--data"
       }
@@ -59,8 +59,7 @@ class LeagueTable extends Component{
             <div>Pts</div>
           </div>
           {this.state.leagueTable.map((row) => {
-            console.log(row);
-            return <PointsTableData data={row}/>
+            return <PointsTableData data={row} key={row[0]}/>
           })}
         </div>
       </div>
