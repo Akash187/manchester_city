@@ -1,6 +1,7 @@
 import React from 'react';
 import Otamendi from '../../images/players/Otamendi.png';
 import Roll from 'react-reveal/Roll';
+import {NavLink} from "react-router-dom";
 
 const Team = () => {
   return (
@@ -51,7 +52,7 @@ const Team = () => {
             <div><span>players</span></div>
           </div>
           <button className="players_btn">
-            Meet them here
+            <NavLink to="/the_team" className="btn">meet them here</NavLink>
           </button>
         </div>
       </div>

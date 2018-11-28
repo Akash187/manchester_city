@@ -4,9 +4,18 @@
     --background-color-two: #000020;
 }
 
+.btn{
+    text-decoration: none;
+    color: var(--background-color-two);
+}
+
+/*Styling react-router active link*/
+.active{
+    background: rgba(0, 0, 32, 0.5);
+}
+
 
 /*Navbar Style*/
-
 .navbar{
     display: flex;
     flex-wrap: wrap;
@@ -416,6 +425,7 @@ button:active {
     border: 2px solid var(--background-color-two);
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
     outline: none;
+    text-decoration: none;
     font-size: 1rem;
     font-weight: 700;
 }
@@ -569,3 +579,5 @@ button:active {
     background: rgba(144, 202, 217,0.2);
     width: 15rem;
 }
+
+

@@ -1,11 +1,14 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Slide from 'react-reveal/Slide';
 import Otamendi from '../../images/players/Otamendi.png';
+import  ScrollToTopOnMount from '../../ScrollToTopOnMount';
 
-class TheTeam extends Component{
+class TheTeam extends React.Component{
+
   render(){
     return(
       <div className="the_team">
+        <ScrollToTopOnMount/>
         <div className="the_team_header">
           Keepers
         </div>
