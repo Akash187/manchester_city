@@ -1,6 +1,7 @@
 import React from 'react';
 import Bounce from 'react-reveal/Bounce';
 import brigton from '../../images/team_icons/brighton.png';
+import {NavLink} from "react-router-dom";
 
 const Matches = (props) => {
   return (
@@ -86,7 +87,9 @@ const Matches = (props) => {
             </div>
           </Bounce>
         </div>
-        <button className="matches_btn">See more matches</button>
+        <button className="matches_btn">
+          <NavLink to="/matches" className="btn">See more matches</NavLink>
+        </button>
       </div>
     </div>
   );

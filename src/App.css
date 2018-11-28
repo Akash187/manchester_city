@@ -581,3 +581,69 @@ button:active {
 }
 
 
+/*MatchesDetail Style*/
+.matches_detail{
+    padding-top: 5rem;
+    display: grid;
+    grid-template-columns: minmax(30rem,auto) 30rem;
+    grid-auto-flow: column;
+}
+
+.all_matches{
+    width: 100%;
+    background: rgba(144,202,217,0.2);
+}
+
+@media only screen and (max-width: 60rem){
+    .matches_detail{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+/*League Table Style*/
+
+.league_table{
+    width: 100%;
+    background: var(--background-color-one);
+}
+
+.league_table_header{
+    height: 4rem;
+    font-size: 2rem;
+    color: white;
+    border-bottom: 1px solid var(--background-color-two);
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+}
+
+.--league-table-header{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 2px;
+    align-items: center;
+    border-bottom: 1px solid white;
+    height: 2rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: white;
+}
+
+.--league-table-body{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 2px;
+    align-items: center;
+    border-bottom: 1px solid white;
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: white;
+}
+
+.--league-table-body div:nth-child(2){
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
