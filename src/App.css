@@ -748,3 +748,36 @@ button:active {
     text-overflow: ellipsis;
 }
 
+
+/*Login Style*/
+.login{
+    padding-top: 10rem;
+    padding-bottom: 5rem;
+    max-height: 25rem;
+    min-height: calc(100vh - 15rem - 138px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login_header{
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--background-color-one);
+}
+
+.login_email{
+    min-width: 20rem !important;
+}
+
+.login_password{
+    min-width: 20rem !important;
+}
+
+.login_btn{
+    height: 2.5rem !important;
+    margin-top: 1rem !important;
+    min-width: 20rem !important;
+    background: #00003A !important;
+    color: #ffffff !important;
+}
