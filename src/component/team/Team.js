@@ -51,9 +51,11 @@ const Team = () => {
             <div><span>the</span></div>
             <div><span>players</span></div>
           </div>
+          <NavLink to="/the_team" className="btn">
           <button className="players_btn">
-            <NavLink to="/the_team" className="btn">meet them here</NavLink>
+            meet them here
           </button>
+          </NavLink>
         </div>
       </div>
     </div>

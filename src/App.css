@@ -406,6 +406,7 @@ button:active {
     font-size: 5.5rem;
     font-weight: 500;
     color: white;
+    line-height: 1.25;
 }
 
 .players_header div span{
