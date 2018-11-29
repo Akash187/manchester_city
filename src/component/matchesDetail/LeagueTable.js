@@ -67,8 +67,8 @@ class LeagueTable extends Component{
             <div>Pos</div>
             <div>Team</div>
             <div>W</div>
-            <div>L</div>
             <div>D</div>
+            <div>L</div>
             <div>Pts</div>
           </div>
           {this.state.leagueTable.map((row) => {

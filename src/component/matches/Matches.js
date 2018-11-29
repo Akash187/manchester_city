@@ -88,9 +88,9 @@ const Matches = (props) => {
           </Bounce>
         </div>
         <NavLink to="/matches" className="btn">
-        <button className="matches_btn">
-          See more matches
-        </button>
+          <button className="matches_btn">
+            See more matches
+          </button>
         </NavLink>
       </div>
     </div>

@@ -1,7 +1,7 @@
 /* ----Variables ---- */
 :root{
     --background-color-one: #90CAD9;
-    --background-color-two: #000020;
+    --background-color-two: #00003A;
 }
 
 .btn{
@@ -590,11 +590,6 @@ button:active {
     grid-auto-flow: column;
 }
 
-.all_matches{
-    width: 100%;
-    background: rgba(144,202,217,0.2);
-}
-
 @media only screen and (max-width: 420px) {
     .all_matches{
         padding-top: 2rem;
@@ -609,8 +604,107 @@ button:active {
 }
 
 
-/*League Table Style*/
+/*AllMatches Style*/
+.all_matches{
+    width: 100%;
+    background: rgba(144,202,217,0.2);
+    display: flex;
+    flex-direction: column;
+}
 
+.all_matches_filter{
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 4rem;
+    border-bottom: 1px solid var(--background-color-two);
+}
+
+.all_matches_filter > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid var(--background-color-two);
+    padding: 0 1rem;
+}
+
+.all_matches_filter_header{
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: Arial, sans-serif;
+    text-transform: capitalize;
+    margin-bottom: 0.1rem;
+}
+
+.all_matches_btn{
+    text-decoration: none;
+    border: none;
+    outline: none;
+    padding: 0.25rem 0.5rem;
+    background: white;
+    margin-right: 0.25rem;
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.24), 0 5px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.all_matches-match{
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba(0, 0, 58, 0.5);
+}
+
+.all_matches-match-teams{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0 1rem 1rem;
+    border-right: 1px solid rgba(0, 0, 58, 0.2);
+}
+
+.all_matches-match-team{
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.25rem;
+}
+
+.all_matches-match-team-flag{
+    height: 3rem;
+}
+
+.all_matches-match-team-name{
+    margin: 0 0.5rem;
+}
+
+.all_matches-match-team-point{
+    margin-right: 2rem;
+}
+
+.all_matches-match-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 1rem;
+}
+
+.all_matches-match-info > div {
+    margin-bottom: 0.25rem;
+}
+
+.all_matches-match-info-data{
+    font-weight: 300;
+    margin-left: 0.25rem;
+    font-family: Arial, sans-serif;
+    text-transform: capitalize;
+}
+
+@media only screen and (max-width: 422px) {
+    .all_matches_filter > div{
+        border: none;
+        margin: 0.5rem 0;
+    }
+}
+
+
+
+
+/*League Table Style*/
 .league_table{
     width: 100%;
     background: var(--background-color-one);

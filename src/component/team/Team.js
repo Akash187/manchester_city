@@ -52,9 +52,9 @@ const Team = () => {
             <div><span>players</span></div>
           </div>
           <NavLink to="/the_team" className="btn">
-          <button className="players_btn">
-            meet them here
-          </button>
+            <button className="players_btn">
+              meet them here
+            </button>
           </NavLink>
         </div>
       </div>
