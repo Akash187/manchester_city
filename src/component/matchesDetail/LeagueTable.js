@@ -8,6 +8,16 @@ class LeagueTable extends Component{
   };
 
   componentDidMount(){
+    
+    //Retrieving data:
+    let text = localStorage.getItem("leagueTableJSON");
+    let obj = JSON.parse(text);
+    if(obj !== null){
+      this.setState({
+        leagueTable: obj
+      });
+    }
+
     scrapeIt("https://cors-anywhere.herokuapp.com/https://www.mancity.com/league-table/first-team", {
       tableBody: {
         listItem: ".table--body .table--data"
@@ -39,7 +49,10 @@ class LeagueTable extends Component{
       }
       this.setState({
         leagueTable: pointTable
-      })
+      });
+      //Storing data:
+      let myJSON = JSON.stringify(pointTable);
+      localStorage.setItem("leagueTableJSON", myJSON);
     })
   }
 
