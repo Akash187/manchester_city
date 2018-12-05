@@ -608,6 +608,7 @@ button:active {
 .all_matches{
     width: 100%;
     background: rgba(144,202,217,0.2);
+    min-height: calc(100vh - 5rem - 138px);
     display: flex;
     flex-direction: column;
 }
@@ -780,4 +781,15 @@ button:active {
     min-width: 20rem !important;
     background: #00003A !important;
     color: #ffffff !important;
+}
+
+.login_error{
+    margin-top: 0.5rem;
+    color: red;
+}
+
+/*Dashboard Style*/
+.dashboard{
+    padding-top: 5rem;
+    min-height: calc(100vh - 5rem - 138px);
 }

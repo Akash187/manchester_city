@@ -5,13 +5,16 @@
   "dependencies": {
     "@material-ui/core": "^3.5.1",
     "@material-ui/icons": "^3.0.1",
+    "firebase": "^5.6.0",
+    "formik": "^1.3.2",
     "normalize.css": "^8.0.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-reveal": "^1.2.2",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1",
-    "scrape-it": "^5.1.0"
+    "scrape-it": "^5.1.0",
+    "yup": "^0.26.6"
   },
   "scripts": {
     "start": "react-scripts start",
