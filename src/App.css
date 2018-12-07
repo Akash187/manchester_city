@@ -4,6 +4,7 @@
     --background-color-two: #00003A;
 }
 
+
 .btn{
     text-decoration: none;
     color: var(--background-color-two);
@@ -703,8 +704,6 @@ button:active {
 }
 
 
-
-
 /*League Table Style*/
 .league_table{
     width: 100%;
@@ -792,4 +791,179 @@ button:active {
 .dashboard{
     padding-top: 5rem;
     min-height: calc(100vh - 5rem - 138px);
+    display: flex;
 }
+
+.drawer{
+    padding-top: 5rem;
+}
+
+.drawer-btn{
+    display: none;
+    position: fixed;
+    top: 5rem;
+}
+
+.adminSideList{
+    text-decoration: none;
+    color: white;
+}
+
+.sidenav{
+    width: 12rem;
+    height: calc(100% - 5rem);
+    background: black;
+    overflow-y: auto;
+    position: fixed;
+}
+
+.sidenav ul{
+    background: black;
+    border-bottom: 1px solid white;
+}
+
+.sidenav ul:hover{
+    opacity: 0.5;
+}
+
+.drawer ul span,.sidenav ul span{
+    text-align: center;
+}
+
+.admin-Content{
+    margin-left: 12rem;
+    width: calc(100% - 12rem);
+    height: calc(100% - 5rem - 138px);
+}
+
+@media only screen and (max-width: 640px) {
+    #footer{
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+    .drawer-btn{
+        display: block;
+    }
+    .sidenav{
+        display: none;
+    }
+    .adminSideList{
+        text-decoration: none;
+        color: black !important;
+    }
+    .admin-Content{
+        all: unset;
+        width: calc(100% - 2.5rem);
+        padding-left: 2.5rem;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .drawer-btn{
+        top: 7rem;
+    }
+    .drawer{
+        padding-top: 7rem;
+    }
+    .dashboard{
+        padding-top: 7rem;
+        min-height: calc(100vh - 7rem - 138px);
+    }
+    .admin-Content{
+        padding-left: 0;
+    }
+}
+
+.dashboard_intro{
+    height: 4rem;
+    font-size: 2rem;
+    color: var(--background-color-one);
+    padding-top: 10rem;
+    padding-left: 1rem;
+    text-align: center;
+}
+
+/*Form*/
+
+.admin_form{
+    padding: 1rem 1rem;
+    max-width: 60%;
+    min-width: 18rem;
+}
+
+.admin_form_header{
+    font-size: 2rem;
+    font-family: "Arial", serif;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.admin_form_header span{
+    background: var(--background-color-one);
+    padding: 0.5rem;
+}
+
+.form_field_header{
+    font-size: 1.5rem;
+    font-family: "Arial", serif;
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+.form_field_header span{
+    background: #00003A;
+    color: white;
+    padding: 0.25rem;
+}
+
+.form_input_field{
+    width: 100%;
+}
+
+.form_input_score_field{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Matches Table*/
+.matches_table{
+    padding: 1rem 1rem;
+}
+
+.--table{
+    display: grid;
+    grid-template-columns: 8rem 15rem 15rem 10rem 5rem 5rem;
+    grid-column-gap: 0.25rem;
+    align-items: center;
+    border-bottom: 1px solid white;
+}
+
+.--matches-table-header{
+    height: 2rem;
+}
+
+.--matches-table-header div{
+    min-width: 6rem;
+}
+
+.--matches-table{
+    overflow: auto;
+}
+
+.--matches-table-body{
+    font-size: 1rem;
+    font-family: "Arial", serif;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.--matches-table-body:nth-child(even){
+    background: rgba(0,0,0,0.2);
+}
+
+.--matches-table-body div{
+    min-width: 6rem;
+    margin: 2px 0;
+}
+

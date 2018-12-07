@@ -2,12 +2,13 @@ import React from 'react';
 import './App.css';
 import 'normalize.css/normalize.css';
 import Routes from "./component/routes/Routes";
+import {MyProvider} from "./component/contextAPI/MyProvider";
 
 const App = () =>{
     return (
-      <div className="App">
+      <MyProvider>
         <Routes/>
-      </div>
+      </MyProvider>
     );
 };
 
