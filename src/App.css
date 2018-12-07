@@ -606,7 +606,7 @@ button:active {
 
 
 /*AllMatches Style*/
-.all_matches{
+.--all_matches{
     width: 100%;
     background: rgba(144,202,217,0.2);
     min-height: calc(100vh - 5rem - 138px);
@@ -934,7 +934,7 @@ button:active {
 
 .--table{
     display: grid;
-    grid-template-columns: 8rem 15rem 15rem 10rem 5rem 5rem;
+    grid-template-columns: minmax(8rem, 1fr) minmax(15rem, 1fr) minmax(15rem, 1fr) minmax(10rem, 1fr) minmax(5rem, 1fr) minmax(5rem, 1fr);
     grid-column-gap: 0.25rem;
     align-items: center;
     border-bottom: 1px solid white;
@@ -955,7 +955,10 @@ button:active {
 .--matches-table-body{
     font-size: 1rem;
     font-family: "Arial", serif;
+    text-transform: capitalize;
     border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    min-height: 2rem;
+    padding: 2px 0;
 }
 
 .--matches-table-body:nth-child(even){
@@ -965,5 +968,24 @@ button:active {
 .--matches-table-body div{
     min-width: 6rem;
     margin: 2px 0;
+}
+
+.--table-first-col{
+    padding-left: 0.25rem;
+}
+
+input[type=file]{
+    opacity: 0;
+}
+
+.upload-image{
+    margin-bottom: -27px;
+}
+
+.--table-players{
+    display: grid;
+    grid-template-columns: repeat(4,minmax(8rem, 1fr));
+    grid-column-gap: 0.25rem;
+    align-items: center;
 }
 

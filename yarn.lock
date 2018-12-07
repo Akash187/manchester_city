@@ -8419,6 +8419,13 @@ react-event-listener@^0.6.2:
     prop-types "^15.6.0"
     warning "^4.0.1"
 
+react-firebase-file-uploader@^2.4.2:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/react-firebase-file-uploader/-/react-firebase-file-uploader-2.4.2.tgz#6bce6144683c125b282fcca357bb29bf425a16c5"
+  integrity sha512-+oevsz/MH2LdS3tx9iImB4X1gehD3LWPv/KPxLVtd6jh4mwuEyC1/rTo7EWmr39NmoDTO2hI9pHPNOhE5K6iwQ==
+  dependencies:
+    uuid "^3.2.1"
+
 react-is@^16.3.2:
   version "16.6.3"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.6.3.tgz#d2d7462fcfcbe6ec0da56ad69047e47e56e7eac0"
@@ -10142,7 +10149,7 @@ utils-merge@1.0.1:
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
   integrity sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=
 
-uuid@^3.0.1, uuid@^3.3.2:
+uuid@^3.0.1, uuid@^3.2.1, uuid@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
   integrity sha512-yXJmeNaw3DnnKAOKJE51sL/ZaYfWJRl1pK9dr19YFCu0ObS231AB1/LbqTKRAQ5kw8A90rA6fr4riOUpTZvQZA==

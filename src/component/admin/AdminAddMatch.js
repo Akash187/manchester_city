@@ -39,7 +39,16 @@ class AdminAddMatch extends Component{
     if(
       this.state.date && this.state.teamA !== this.state.teamB &&  this.state.referee && this.state.stadium
     ) {
-      database.ref(`/matches`).push(this.state).then((success) => {
+      database.ref(`/matches`).push({
+        date: this.state.date,
+        teamA : this.state.teamA,
+        teamB : this.state.teamB,
+        referee: this.state.referee.trim().replace(/\b\w/g, l => l.toUpperCase()),
+        stadium: this.state.stadium.trim().replace(/\b\w/g, l => l.toUpperCase()),
+        teamA_score: this.state.teamA_score,
+        teamB_score: this.state.teamB_score,
+        status: this.state.status
+      }).then((success) => {
         context.handleClickOpenSnackBar('Match Added Successfully!');
         this.setState({
           date: '',

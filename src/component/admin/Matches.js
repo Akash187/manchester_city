@@ -21,11 +21,6 @@ class Matches extends Component{
       });
   }
 
-  componentWillUnmount(){
-    //this.subscribed();
-    //console.log("unsbscribed");
-  }
-
   render(){
     console.log("Matches Location : " + JSON.stringify(this.state.matches));
     return (
@@ -35,7 +30,7 @@ class Matches extends Component{
         </div>
         <div className="--matches-table">
           <div className="--table --matches-table-header">
-            <div>Date</div>
+            <div className="--table-first-col">Date</div>
             <div>Match</div>
             <div>Stadium</div>
             <div>Referee</div>
@@ -54,7 +49,7 @@ class Matches extends Component{
 const MatchesTableData = (props) => {
   return (
     <div className="--table --matches-table-body">
-      <span>{props.data.date}</span>
+      <span className="--table-first-col">{props.data.date}</span>
       <span>{props.data.teamA} - {props.data.teamB}</span>
       <span>{props.data.stadium}</span>
       <span>{props.data.referee}</span>
