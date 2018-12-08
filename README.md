@@ -1,44 +1,51 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Manchester City
+---
 
-## Available Scripts
+## Project Purpose:
 
-In the project directory, you can run:
+This project was built to practice my ReactJS and Firebase Skill. The project is all about Manchester City Football team and their Matches in Champion League. Matches and team player are added in real-time using a form in admin section of the website. The League Table is updated in real time using web scrapping.
 
-### `npm start`
+## Tools and Skills Used
+1. ReactJS
+2. React Router
+3. Material-UI(just for the form)
+4. Responsive and Mobile friendly design(pure css)
+5. Animation (css + React-Reveal)
+6. Using Third party reactjs package
+7. Firebase Realtime Database
+8. Firebase Storage(for Image)
+9. Firebase Auth
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## How to Load the App
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+You can run a hosted version of the app at [https://manchester-city.netlify.com/](https://manchester-city.netlify.com/)
 
-### `npm test`
+See the project sample video [https://youtu.be/Fz04sQ785Tc](https://youtu.be/Fz04sQ785Tc)
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The project uses Node.js and the Create-React-App starter. If you do not have Node >= 6.x installed, you can download it here: [Node.js](https://nodejs.org/en/)
 
-### `npm run build`
+Once Node is installed, navigate to the directory where you want to store the app
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+git clone https://github.com/Akash187/manchester_city.git
+npm install
+```
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Create a Firebase App and put the keys and secret in a .env file in the root of project. See the example below.
+```
+REACT_APP_FIREBASE_API_KEY=AIzaSyBjuzodfdsjkKDFfkdk2oJYUX9dEaU
+REACT_APP_FIREBASE_AUTH_DOMAIN=manchester-city-12e45.firebaseapp.com
+REACT_APP_FIREBASE_DATABASE_URL=https://manchester-city-12e45.firebaseio.com
+REACT_APP_FIREBASE_PROJECT_ID=manchester-city-12e45
+REACT_APP_FIREBASE_STORAGE_BUCKET=manchester-city-12e45.appspot.com
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=2412e4546937
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Once all of the dependencies have been installed you can launch the app with
 
-### `npm run eject`
+```
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+A new browser window should automatically open displaying the app. If it doesn't, navigate to [http://localhost:3000/](http://localhost:3000/) in your browser
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
