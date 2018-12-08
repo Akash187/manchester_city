@@ -291,9 +291,13 @@
     width: 2.5rem;
 }
 
-.match_team div img{
-    height: 2rem;
+.icon{
+    height: 2.5rem;
+    width: 2.5rem;
     padding: 0.25rem 0.5rem;
+    outline: none;
+    border: 0;
+    background-size: cover !important;
 }
 
 .matches_btn{
@@ -609,7 +613,6 @@ button:active {
 .--all_matches{
     width: 100%;
     background: rgba(144,202,217,0.2);
-    min-height: calc(100vh - 5rem - 138px);
     display: flex;
     flex-direction: column;
 }
@@ -667,7 +670,9 @@ button:active {
 }
 
 .all_matches-match-team-flag{
+    width: 3rem;
     height: 3rem;
+    background-size: cover !important;
 }
 
 .all_matches-match-team-name{
@@ -676,6 +681,7 @@ button:active {
 
 .all_matches-match-team-point{
     margin-right: 2rem;
+    color: yellowgreen;
 }
 
 .all_matches-match-info{
@@ -859,6 +865,9 @@ button:active {
 }
 
 @media only screen and (max-width: 380px) {
+    .matches_detail{
+        padding-top: 7rem;
+    }
     .drawer-btn{
         top: 7rem;
     }
@@ -988,4 +997,3 @@ input[type=file]{
     grid-column-gap: 0.25rem;
     align-items: center;
 }
-

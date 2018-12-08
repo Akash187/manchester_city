@@ -69,7 +69,7 @@ class AdminAddMatch extends Component{
   };
 
   render(){
-    console.log(this.state);
+    //console.log(this.state);
     return (
       <div className="admin_form">
         <div className="admin_form_header">

@@ -63,7 +63,7 @@ class TheTeam extends React.Component{
         <div className="the_team_players">
           {
             this.state.keepers.map(player => (
-              <Slide left>
+              <Slide left key={player.id}>
                 <div className="the_team_player">
                   <img src={player.avatarURL} alt={player.firstname}/>
                   <div className="player_info">
@@ -81,7 +81,7 @@ class TheTeam extends React.Component{
         <div className="the_team_players">
           {
             this.state.defence.map(player => (
-              <Slide left>
+              <Slide left key={player.id}>
                 <div className="the_team_player">
                   <img src={player.avatarURL} alt={player.firstname}/>
                   <div className="player_info">
@@ -99,7 +99,7 @@ class TheTeam extends React.Component{
         <div className="the_team_players">
           {
             this.state.midfield.map(player => (
-              <Slide left>
+              <Slide left key={player.id}>
                 <div className="the_team_player">
                   <img src={player.avatarURL} alt={player.firstname}/>
                   <div className="player_info">
@@ -117,7 +117,7 @@ class TheTeam extends React.Component{
         <div className="the_team_players">
           {
             this.state.strikers.map(player => (
-              <Slide left>
+              <Slide left key={player.id}>
                 <div className="the_team_player">
                   <img src={player.avatarURL} alt={player.firstname}/>
                   <div className="player_info">

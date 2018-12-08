@@ -22,7 +22,7 @@ class Matches extends Component{
   }
 
   render(){
-    console.log("Players Location : " + JSON.stringify(this.state.players));
+    //console.log("Players Location : " + JSON.stringify(this.state.players));
     return (
       <div className="matches_table">
         <div className="admin_form_header">

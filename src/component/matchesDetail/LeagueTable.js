@@ -23,7 +23,7 @@ class LeagueTable extends Component{
         listItem: ".table--body .table--data"
       }
     }).then(({ data, response }) => {
-      console.log(`Status Code: ${response.statusCode}`);
+      //console.log(`Status Code: ${response.statusCode}`);
       let pointTable = [];
       let tableBody = data.tableBody;
       let tableRow = [];

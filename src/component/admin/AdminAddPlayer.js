@@ -73,7 +73,7 @@ class AdminAddMatch extends Component{
           avatarURL: ""
         });
       }).catch((err) => {
-        console.log("Add Player Error : " + err);
+        //console.log("Add Player Error : " + err);
         context.handleClickOpenSnackBar("Error Saving Form!");
       });
     }else{

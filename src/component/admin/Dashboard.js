@@ -28,23 +28,23 @@ class Dashboard extends Component {
 
   componentWillUnmount(){
     this.subscribed();
-    console.log("unsubscribe");
+    //console.log("unsubscribe");
     document.getElementById("footer").style.width = "100%";
     document.getElementById("footer").style.marginLeft = "0";
   }
 
   logout = () => {
     auth.signOut().then(() => {
-      console.log("Sign-out successful.");
+      //console.log("Sign-out successful.");
       this.props.history.push('/login');
     }).catch(function(error) {
       // An error happened.
-      console.log("Error Signing out. " + error);
+      //console.log("Error Signing out. " + error);
     });
   };
 
   render() {
-    console.log("Dashboard Location : " + JSON.stringify(this.props.location));
+    //console.log("Dashboard Location : " + JSON.stringify(this.props.location));
     if(this.state.isAuthenticating) return null;
     return (
       <div>

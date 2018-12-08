@@ -29,7 +29,7 @@ class Login extends React.Component{
 
   componentWillUnmount(){
     this.subscribed();
-    console.log("unsubscribe");
+    //console.log("unsubscribe");
   }
 
   handleChange = prop => event => {
@@ -46,9 +46,9 @@ class Login extends React.Component{
       this.props.history.push('/dashboard');
     })
       .catch((error) => {
-      let errorCode = error.code;
+      //let errorCode = error.code;
       let errorMessage = error.message;
-      console.log(`${errorCode} ${errorMessage}`);
+      //console.log(`${errorCode} ${errorMessage}`);
       this.setState({
         errorMessage,
         password: ''
@@ -57,7 +57,7 @@ class Login extends React.Component{
   };
 
   render(){
-    console.log("Login Auth  : " + JSON.stringify(auth.currentUser));
+    //console.log("Login Auth  : " + JSON.stringify(auth.currentUser));
     //if(this.state.isAuthenticating) return null;
     return(
       <div>
