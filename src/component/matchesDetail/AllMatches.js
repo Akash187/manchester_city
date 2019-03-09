@@ -27,53 +27,81 @@ class AllMatches extends React.Component{
   }
 
   filterMatch = (filter) => {
-    if(filter === 'match_all') {
-      this.setState({filteredMatches: this.state.matches, showMatch: filter});
+    if(filter === 'match_all' || filter === 'played' || filter === 'not_played') {
+      this.setState(() => ({showMatch: filter}), () => this.showFilteredMatch());
       document.getElementById(this.state.showMatch).style.background = "white";
-    }else if(filter === 'played'){
-      let tempMatches = this.state.matches.filter((match) => {
-        return match.status === 'Final';
-      });
-      this.setState({filteredMatches: tempMatches, showMatch: filter});
-      document.getElementById(this.state.showMatch).style.background = "white";
-    }else if(filter === 'not_played'){
+    }else{
+      this.setState(() => ({gameResult: filter}), () => this.showFilteredMatch());
+      document.getElementById(this.state.gameResult).style.background = "white";
+    }
+    document.getElementById(filter).style.background = "green";
+  };
+
+  showFilteredMatch = () => {
+    let selectedShowMatch = this.state.showMatch;
+    let selectedGameResult = this.state.gameResult;
+    if(selectedShowMatch === 'match_all'){
+      if(selectedGameResult === 'game_all'){
+        this.gameResultAll();
+      }else if(selectedGameResult === 'win'){
+        this.gameResultWin();
+      }else if(selectedGameResult === 'loss'){
+        this.gameResultLoss();
+      }else{
+        this.gameResultDraw();
+      }
+    }else if(selectedShowMatch === 'played'){
+      if(selectedGameResult === 'game_all'){
+        let tempMatches = this.state.matches.filter((match) => {
+          return match.status === 'Final';
+        });
+        this.setState({filteredMatches: tempMatches});
+      }else if(selectedGameResult === 'win'){
+        this.gameResultWin();
+      }else if(selectedGameResult === 'loss'){
+        this.gameResultLoss();
+      }else{
+        this.gameResultDraw();
+      }
+    }else if(selectedShowMatch === 'not_played'){
       let tempMatches = this.state.matches.filter((match) => {
         return match.status !== 'Final';
       });
-      this.setState({filteredMatches: tempMatches, showMatch: filter});
-      document.getElementById(this.state.showMatch).style.background = "white";
-    }else if(filter === 'game_all'){
-      this.setState({gameResult: filter});
-      document.getElementById(this.state.gameResult).style.background = "white";
-    }else if(filter === 'win'){
-      let tempMatches = this.state.matches.filter((match) => {
-        if(match.teamA === 'Manchester City'){
-          return match.teamA_score > match.teamB_score;
-        }else{
-          return match.teamA_score < match.teamB_score;
-        }
-      });
-      this.setState({filteredMatches: tempMatches, gameResult: filter});
-      document.getElementById(this.state.gameResult).style.background = "white";
-    }else if(filter === 'loss'){
-      let tempMatches = this.state.matches.filter((match) => {
-        if(match.teamA === 'Manchester City'){
-          return match.teamA_score < match.teamB_score;
-        }else{
-          return match.teamA_score > match.teamB_score;
-        }
-      });
-      this.setState({filteredMatches: tempMatches, gameResult: filter});
-      document.getElementById(this.state.gameResult).style.background = "white";
-    }else if(filter === 'draw'){
-      let tempMatches = this.state.matches.filter((match) => {
-          return match.teamA_score === match.teamB_score && match.teamA_score;
-      });
-      this.setState({filteredMatches: tempMatches, gameResult: filter});
-      document.getElementById(this.state.gameResult).style.background = "white";
+      this.setState({filteredMatches: tempMatches});
     }
-    // console.log(this.state);
-    document.getElementById(filter).style.background = "green";
+  };
+
+  gameResultAll = () => {
+    this.setState({filteredMatches: this.state.matches});
+  };
+
+  gameResultWin = () => {
+    let tempMatches = this.state.matches.filter((match) => {
+      if(match.teamA === 'Manchester City'){
+        return match.teamA_score > match.teamB_score;
+      }else{
+        return match.teamA_score < match.teamB_score;
+      }
+    });
+    this.setState({filteredMatches: tempMatches});
+  };
+
+  gameResultLoss = () => {
+    let tempMatches = this.state.matches.filter((match) => {
+      if(match.teamA === 'Manchester City'){
+        return match.teamA_score < match.teamB_score;
+      }else{
+        return match.teamA_score > match.teamB_score;
+      }
+    });
+    this.setState({filteredMatches: tempMatches});
+  };
+
+  gameResultDraw = () => {
+    let tempMatches = this.state.matches.filter((match) => {
+      return match.teamA_score === match.teamB_score && match.teamA_score;
+    });
+    this.setState({filteredMatches: tempMatches});
   };
 
   render(){

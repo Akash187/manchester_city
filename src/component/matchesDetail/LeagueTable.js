@@ -28,7 +28,7 @@ class LeagueTable extends Component{
       let tableBody = data.tableBody;
       let tableRow = [];
       let x = 0;
-      for (let i = 0; i < tableBody.length; i++) {
+      for (let i = 0; i < tableBody.length + 1; i++) {
         if (i === x+1)
           tableRow.push(tableBody[i]);
         else if(i === x+3)

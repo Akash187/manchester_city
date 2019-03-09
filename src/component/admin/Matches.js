@@ -1,10 +1,25 @@
 import React, {Component} from 'react';
+import IconButton from '@material-ui/core/IconButton';
+import CreateIcon from '@material-ui/icons/Create';
+import DeleteIcon from '@material-ui/icons/Delete';
 import {database} from "../../firebase/firebase";
+import {MyContext} from "../contextAPI/MyProvider";
+import UpdateMatchScore from "./UpdateMatchScore";
 
 class Matches extends Component{
 
   state = {
-    matches: []
+    matches: [],
+    openUpdateModal: false,
+    updateMatchId: ''
+  };
+
+  handleOpenUpdateModal = (id, teamA, teamB) => {
+    this.setState({ openUpdateModal: true, updateMatchId: id, teamA, teamB });
+  };
+
+  handleCloseUpdateModal = () => {
+    this.setState({ openUpdateModal: false });
   };
 
   componentDidMount(){
@@ -21,6 +36,18 @@ class Matches extends Component{
       });
   }
 
+  deleteMatch = (context,id) => {
+    database.ref(`/matches/${id}`).remove()
+      .then(function() {
+        //Remove succeeded.
+        context.handleClickOpenSnackBar('Match Deleted!');
+      })
+      .catch(function(error) {
+        //Remove failed
+        context.handleClickOpenSnackBar('Unable to Delete Match!');
+      });
+  };
+
   render(){
     //console.log("Matches Location : " + JSON.stringify(this.state.matches));
     return (
@@ -36,11 +63,13 @@ class Matches extends Component{
             <div>Referee</div>
             <div>Result</div>
             <div>Status</div>
+            <div className="--table-last-col">Action</div>
           </div>
           {this.state.matches.map((row) => {
-            return <MatchesTableData data={row} key={row.id}/>
+            return <MatchesTableData data={row} key={row.id} deleteMatch={this.deleteMatch} handleOpenUpdateModal={this.handleOpenUpdateModal}/>
           })}
         </div>
+        <UpdateMatchScore id={this.state.updateMatchId} openUpdateModal={this.state.openUpdateModal} handleCloseUpdateModal={this.handleCloseUpdateModal}/>
       </div>
     )
   }
@@ -55,6 +84,18 @@ const MatchesTableData = (props) => {
       <span>{props.data.referee}</span>
       <span>{props.data.teamA_score}-{props.data.teamB_score}</span>
       <span>{props.data.status}</span>
+      <span>
+        <IconButton color="primary" disabled={props.data.status === 'Final'}>
+          <CreateIcon onClick={() => props.handleOpenUpdateModal(props.data.id)}/>
+        </IconButton>
+        <MyContext.Consumer>
+            {(context) => (
+        <IconButton color="secondary" onClick={() => props.deleteMatch(context,props.data.id)} aria-label="Delete">
+          <DeleteIcon />
+        </IconButton>
+              )}
+        </MyContext.Consumer>
+      </span>
     </div>
   )
 };

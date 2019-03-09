@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import {database} from "../../firebase/firebase";
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
+import {MyContext} from '../contextAPI/MyProvider';
 
 class Matches extends Component{
 
@@ -34,6 +37,7 @@ class Matches extends Component{
             <div>Last Name</div>
             <div>Jersey No</div>
             <div>Position</div>
+            <div>Action</div>
           </div>
           {this.state.players.map((row) => {
             return <PlayersTableData data={row} key={row.id}/>
@@ -44,15 +48,39 @@ class Matches extends Component{
   }
 }
 
-const PlayersTableData = (props) => {
-  return (
-    <div className="--table-players  --matches-table-body">
-      <span className="--table-first-col">{props.data.firstname}</span>
-      <span>{props.data.lastname}</span>
-      <span>{props.data.jerseyNo}</span>
-      <span>{props.data.position}</span>
-    </div>
-  )
-};
+class PlayersTableData extends Component{
+
+  deletePlayer = (context,id) => {
+    database.ref(`/players/${id}`).remove()
+      .then(function() {
+        //Remove succeeded.
+        context.handleClickOpenSnackBar('Player Deleted!');
+      })
+      .catch(function(error) {
+        //Remove failed
+        context.handleClickOpenSnackBar('Unable to Delete Player!');
+      });
+  };
+
+  render(){
+    return (
+      <div className="--table-players  --matches-table-body">
+        <span className="--table-first-col">{this.props.data.firstname}</span>
+        <span>{this.props.data.lastname}</span>
+        <span>{this.props.data.jerseyNo}</span>
+        <span>{this.props.data.position}</span>
+        <span>
+        <MyContext.Consumer>
+            {(context) => (
+              <IconButton color="secondary" onClick={() => this.deletePlayer(context,this.props.data.id)} aria-label="Delete">
+                <DeleteIcon />
+              </IconButton>
+            )}
+        </MyContext.Consumer>
+      </span>
+      </div>
+    )
+  }
+}
 
 export default Matches;

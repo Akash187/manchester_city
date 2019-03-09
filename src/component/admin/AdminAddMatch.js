@@ -206,8 +206,6 @@ class AdminAddMatch extends Component{
           <MyContext.Consumer>
             {(context) => (
               <React.Fragment>
-                <SnackBar message={context.state.snackbarMessage} open={context.state.openSnackbar}
-                          handleClose={context.handleCloseSnackBar}/>
                 <Button variant="contained" color="primary" className="submit_btn" style={{marginTop: 16}} onClick={() => this.submitMatch(context)}>
                   Add Match
                 </Button>

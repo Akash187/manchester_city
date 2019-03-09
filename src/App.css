@@ -583,7 +583,10 @@ button:active {
 
 .the_team_player img{
     background: rgba(144, 202, 217,0.2);
-    width: 15rem;
+    min-height: 240px;
+    max-width: 240px;
+    max-height: 240px;
+    object-fit: cover;
 }
 
 
@@ -943,7 +946,7 @@ button:active {
 
 .--table{
     display: grid;
-    grid-template-columns: minmax(8rem, 1fr) minmax(15rem, 1fr) minmax(15rem, 1fr) minmax(10rem, 1fr) minmax(5rem, 1fr) minmax(5rem, 1fr);
+    grid-template-columns: minmax(8rem, 1fr) minmax(15rem, 1fr) minmax(15rem, 1fr) minmax(10rem, 1fr) minmax(5rem, 1fr) minmax(5rem, 1fr) minmax(8rem, 1fr);
     grid-column-gap: 0.25rem;
     align-items: center;
     border-bottom: 1px solid white;
@@ -983,6 +986,10 @@ button:active {
     padding-left: 0.25rem;
 }
 
+.--table-last-col{
+    padding-left: 1rem;
+}
+
 input[type=file]{
     opacity: 0;
 }
@@ -993,7 +1000,7 @@ input[type=file]{
 
 .--table-players{
     display: grid;
-    grid-template-columns: repeat(4,minmax(8rem, 1fr));
+    grid-template-columns: repeat(5,minmax(8rem, 1fr));
     grid-column-gap: 0.25rem;
     align-items: center;
 }

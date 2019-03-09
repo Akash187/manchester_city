@@ -8,7 +8,6 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
 import {MyContext} from '../contextAPI/MyProvider';
 import {database,storage} from '../../firebase/firebase';
-import SnackBar from "../global/SnackBar";
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import FileUploader from "react-firebase-file-uploader";
 
@@ -164,13 +163,9 @@ class AdminAddMatch extends Component{
           </div>
           <MyContext.Consumer>
             {(context) => (
-              <React.Fragment>
-                <SnackBar message={context.state.snackbarMessage} open={context.state.openSnackbar}
-                          handleClose={context.handleCloseSnackBar}/>
                 <Button variant="contained" color="primary" className="submit_btn" style={{marginTop: 16}} onClick={() => this.submitPlayer(context)}>
                   Add Player
                 </Button>
-              </React.Fragment>
             )}
           </MyContext.Consumer>
         </form>
