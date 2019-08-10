@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import scrapeIt from 'scrape-it';
+const tabletojson = require("tabletojson");
 
 class LeagueTable extends Component{
 
@@ -8,52 +8,17 @@ class LeagueTable extends Component{
   };
 
   componentDidMount(){
-    
-    //Retrieving data:
-    let text = localStorage.getItem("leagueTableJSON");
-    let obj = JSON.parse(text);
-    if(obj !== null){
-      this.setState({
-        leagueTable: obj
-      });
-    }
 
-    scrapeIt("https://cors-anywhere.herokuapp.com/https://www.mancity.com/league-table/first-team", {
-      tableBody: {
-        listItem: ".table--body .table--data"
+    let self = this;
+    tabletojson.convertUrl(
+      'https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/wiki/Template:2018-19_Premier_League_table',{ useFirstRowForHeadings: true },
+      function(tablesAsJson) {
+        //console.log(tablesAsJson[0]);
+        self.setState({
+          leagueTable: tablesAsJson[0].slice(1)
+        });
       }
-    }).then(({ data, response }) => {
-      //console.log(`Status Code: ${response.statusCode}`);
-      let pointTable = [];
-      let tableBody = data.tableBody;
-      let tableRow = [];
-      let x = 0;
-      for (let i = 0; i < tableBody.length + 1; i++) {
-        if (i === x+1)
-          tableRow.push(tableBody[i]);
-        else if(i === x+3)
-          tableRow.push(tableBody[i]);
-        else if(i === x+5)
-          tableRow.push(tableBody[i]);
-        else if(i === x+6)
-          tableRow.push(tableBody[i]);
-        else if(i === x+7)
-          tableRow.push(tableBody[i]);
-        else if(i === x+12)
-          tableRow.push(tableBody[i]);
-        if(i % 13 === 0 && i !== 0){
-          x = i;
-          pointTable.push(tableRow);
-          tableRow = [];
-        }
-      }
-      this.setState({
-        leagueTable: pointTable
-      });
-      //Storing data:
-      let myJSON = JSON.stringify(pointTable);
-      localStorage.setItem("leagueTableJSON", myJSON);
-    })
+    );
   }
 
   render(){
@@ -72,7 +37,7 @@ class LeagueTable extends Component{
             <div>Pts</div>
           </div>
           {this.state.leagueTable.map((row) => {
-            return <PointsTableData data={row} key={row[0]}/>
+            return <PointsTableData data={row} key={row.Pos}/>
           })}
         </div>
       </div>
@@ -83,12 +48,12 @@ class LeagueTable extends Component{
 const PointsTableData = (props) => {
   return (
     <div className="--league-table-body">
-      <div>{props.data[0]}</div>
-      <div>{props.data[1]}</div>
-      <div>{props.data[2]}</div>
-      <div>{props.data[3]}</div>
-      <div>{props.data[4]}</div>
-      <div>{props.data[5]}</div>
+      <div>{props.data['Pos']}</div>
+      <div>{props.data['Team[ vte ]']}</div>
+      <div>{props.data['W']}</div>
+      <div>{props.data['D']}</div>
+      <div>{props.data['L']}</div>
+      <div>{props.data['Pts']}</div>
     </div>
   )
 };
